@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\..\..\energymeter\PM_Bootloader\iar\bl-usart-happy.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\energymeter\PM_NewBoot\iar\bl-usart-happy.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\energymeter\PM2\pm2.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

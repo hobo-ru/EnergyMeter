@@ -1,0 +1,60 @@
+#ifndef _RS_485_H_
+#define _RS_485_H_
+
+
+
+#include <stdbool.h>
+#include <stdint.h>
+
+
+
+typedef enum {
+  RS485_NO_CMD
+  , RS485_GET_DEVICE_ID
+  , RS485_SET_DEVICE_ID
+
+  , RS485_GET_CLIBRATE_SETTINGS
+  , RS485_START_CALIBRATE
+
+  , RS485_GET_TARIF_SETTINGS
+  , RS485_SET_TARIF
+
+  , RS485_GET_ARCH_DAILY_CNT
+  , RS485_GET_ARCH_LAST_DAILY
+
+  , RS485_GET_ARCH_LD_PROFILE_CNT
+  , RS485_GET_ARCH_LAST_LD_PROFILE
+
+  , RS485_GET_ARCH_QUALITY_CNT
+  , RS485_GET_ARCH_LAST_QUALITY
+
+  , RS485_GET_ARCH_EVENT_CNT
+  , RS485_GET_ARCH_LAST_EVENT
+
+  , RS485_GET_LOCAL_TIME
+  , RS485_SET_LOCAL_TIME
+    
+  , RS485_GET_ADDERS
+    
+  , RS485_WRITE_UPDATE
+  , RS485_CHECK_UPDATE
+  , RS485_PROCEED_UPDATE
+  
+  , RS485_CALLBACK_BUFFER_SIZE
+}RS485_CMD_E;
+
+  
+typedef void (*RS485_EXECUTE)(void);
+
+
+
+extern void RS485_Init( void );
+
+
+extern void RS485_Parse( uint8_t data );
+extern void RS485_ExecuteCmd( void );
+
+extern void RS485_SetExecute( RS485_CMD_E cmd, RS485_EXECUTE callback );
+
+
+#endif
